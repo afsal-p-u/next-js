@@ -6,11 +6,12 @@ interface AccountMenuProps {
   visibe?: boolean;
 }
 const AccountMenu: React.FC<AccountMenuProps> = ({ visibe }) => {
-  if (!visibe) {
-    return null;
-  }
+    
+    const { data: currentUser } = useCurrentUser();  
 
-  const { data: currentUser } = useCurrentUser();  
+    if (!visibe) {
+      return null;
+    }
 
   return <div 
             className="bg-black w-56 absolute top-14 right-0 py-5 flex-col border-2 border-gray-800 flex"
