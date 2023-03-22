@@ -6,7 +6,7 @@ import MovieList from "@/components/movie-list";
 import useMoviesList from "@/hooks/useMoviesList";
 import useFavorites from "@/hooks/useFavourites";
 import InfoModel from "@/components/info-model";
-import useInfoModel from "@/hooks/useInfoModel";
+import useInfoModelStore from "@/hooks/useInfoModelStore";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -28,7 +28,7 @@ export async function getServerSideProps(context: NextPageContext) {
 export default function Home() {
   const { data: movies = [] } = useMoviesList();
   const { data: favorites = [] } = useFavorites();
-  const { isOpen, closeModel } = useInfoModel();
+  const { isOpen, closeModel } = useInfoModelStore();
 
   return (
     <>

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState} from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import PlayButton from './play-button';
 import FavoritButton from './favorite-button';
-import useInfoModel from '@/hooks/useInfoModel';
+import useInfoModel from '@/hooks/useInfoModelStore';
 import useMovie from '@/hooks/useMovie';
 
 interface InfoModelProps {
@@ -50,9 +50,9 @@ const InfoModel: React.FC<InfoModelProps> = ({ visible, onClose }) => {
                             poster={data?.thumbnailUrl}
                         ></video>
                         <div 
-                            className="cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black
+                            className="cursor-pointer z-[999] absolute top-3 right-3 h-10 w-10 rounded-full bg-black
                                         bg-opacity-70 flex items-center justify-center"
-                            onClick={() => {handleClose}}
+                            onClick={() => {handleClose()}}
                         >
                             <AiOutlineClose className='text-white' size={20} />
                         </div>

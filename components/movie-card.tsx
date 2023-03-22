@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { BsChevronDown } from 'react-icons/bs';
 import FavoritButton from './favorite-button';
-import useInfoModel from '@/hooks/useInfoModel';
+import useInfoModel from '@/hooks/useInfoModelStore';
 
 interface MovieCardProps {
     data: Record<string, any>;
